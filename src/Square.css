@@ -5,6 +5,26 @@
 }
 
 .square {
+    position: relative;
     height: 100%;
-    background-color: aquamarine;
+    background-color: #D89A9E;
+}
+
+.square:hover {
+    background-color: #E0C1B3;
+}
+
+.square:active {
+    background-color: #C37D92;
+}
+
+.square-content {
+    font-size: 46px;
+    color: #846267;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -23% 0 0 -23%;
 }
