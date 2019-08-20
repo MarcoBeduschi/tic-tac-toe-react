@@ -1,13 +1,13 @@
 import React from 'react';
-import './Square.css';
 
-function Square() {
+function Square(props) {
     return(
         <div className="square-wrapper">
-            <div className="square">
+            <div className="square" onClick={ () => (props.handleSquareClick(props.id))}>
+                <p className="square-content">{props.value}</p>
             </div>
         </div>
-    )
+    )    
 }
 
 export default Square;
