@@ -21,7 +21,7 @@ class Game extends React.Component {
             };
         });
     }
-    
+
     render() {
         return (
             <div className="game">
@@ -29,7 +29,7 @@ class Game extends React.Component {
                     <h1>Tic Tac Toe Game</h1>
                     <h3>Turn {this.state.turn}</h3>
                 </div>
-                <Board board={this.state.board} handleSquareClick = {this.handleSquareClick}/>
+                <Board board={this.state.board} handleSquareClick={this.handleSquareClick}/>
             </div>
         );
     }
