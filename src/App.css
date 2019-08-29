@@ -8,3 +8,12 @@
   width: 900px;
   margin: 0 auto;
 }
+
+h1, h2, h3 {
+    color: #846267;
+}
+
+p {
+  font-size: 14px;
+  color: #C37D92;
+}

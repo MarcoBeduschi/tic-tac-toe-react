@@ -4,6 +4,13 @@
     text-align: center;
 }
 
+.board-status {
+}
+
+.board-status-content {
+  line-height: 50px;
+}
+
 .board-row {
     height: 120px;
     display: flex;
