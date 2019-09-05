@@ -28,12 +28,12 @@ class Game extends React.Component {
           <h3>Turn {this.state.turn}</h3>
           <p>{status}</p>
         </div>
-        <Board xIsNext={this.state.xIsNext} nextTurn={() => this.nextTurn()}/>
+        <Board xIsNext={this.state.xIsNext} nextTurn={this.nextTurn}/>
       </div>
     );
   }
 
-  nextTurn() {
+  nextTurn(squares) {
     // const winner = calculateWinner(squares);
     // const gameOver = winner ? true : false;
 
