@@ -1,13 +1,21 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Square(props) {
-    return(
-        <div className="square-wrapper">
-            <div className="square" onClick={props.onClick}>
-                <span className="square-content">{props.value}</span>
-            </div>
-        </div>
-    )
+  let icon
+
+  if (props.value == 'X') {
+    icon = <FontAwesomeIcon icon={faTimes} />;
+  } else if (props.value == 'O') {
+    icon = <FontAwesomeIcon icon={faCircle} />;
+  }
+
+  return(
+    <div className="square" onClick={props.onClick}>
+      <span className="square-content">{icon}</span>
+    </div>
+  )
 }
 
 export default Square;

@@ -5,15 +5,15 @@
 }
 
 .app-container {
-  width: 900px;
+  width: 500px;
   margin: 0 auto;
 }
 
 h1, h2, h3 {
-    color: #846267;
+    color: #4f4f4f;
 }
 
 p {
   font-size: 14px;
-  color: #C37D92;
+  color: #808080;
 }

@@ -1,4 +1,9 @@
 .game-header {
     margin-top: 20px;
     text-align: center;
+    padding: 10px 0;
+    border: 1px solid #222;
+    border-color: #e6e6e6;
+    border-bottom-color: transparent;
+    border-radius: 10px 10px 0 0;
 }

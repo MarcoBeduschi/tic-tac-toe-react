@@ -1,27 +1,20 @@
-.square-wrapper {
-    height: 100%;
-    padding: 5px;
-    flex-basis: 33%;
-}
-
 .square {
-    position: relative;
     height: 100%;
-    background-color: #D89A9E;
+    width: 100%;
+    position: relative;
 }
 
 .square:hover {
-    background-color: #E0C1B3;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .square:active {
-    background-color: #C37D92;
 }
 
 .square-content {
+    position: absolute;
     font-size: 46px;
     color: #846267;
-    position: absolute;
     top: 50%;
     left: 50%;
     height: 30%;
