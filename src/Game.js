@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './Board.js';
+import { calculateWinner } from './logic/judge.js';
 
 class Game extends React.Component {
   constructor(props) {
@@ -20,21 +21,27 @@ class Game extends React.Component {
           <h1>Turn {this.state.turn}</h1>
           <p><b>{this.state.xIsNext ? 'X' : 'O'}</b> is next.</p>
         </div>
-        <Board xIsNext={this.state.xIsNext} nextTurn={this.nextTurn}/>
+        <Board
+          xIsNext={this.state.xIsNext}
+          onSquaresUpdate={this.onSquaresUpdate}
+          gameOver={this.state.gameOver}
+        />
       </div>
     );
   }
 
-  nextTurn(squares) {
-    // const winner = calculateWinner(squares);
-    // const gameOver = winner ? true : false;
+  onSquaresUpdate = (squares) => {
+    const newWinner = calculateWinner(squares);
+    const newGameOver = newWinner ? true : false;
 
-    // this.setState((state) => {
-    //   return {
-    //     turn: state.turn + 1,
-    //     xIsNext: !state.xIsNext,
-    //   };
-    // });
+    this.setState((prevState) => {
+      return {
+        turn: prevState.turn + 1,
+        xIsNext: !prevState.xIsNext,
+        gameOver: newGameOver,
+        winner: newWinner,
+      };
+    });
   }
 }
 
