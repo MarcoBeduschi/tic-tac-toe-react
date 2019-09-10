@@ -1,9 +1,28 @@
+.game {
+  margin: 20px 0;
+  border: 2px solid;
+  border-color: #e6e6e6;
+  border-radius: 10px;
+}
+
 .game-header {
-    margin-top: 20px;
+    margin: 20px 0;
     text-align: center;
-    padding: 10px 0;
-    border: 1px solid #222;
-    border-color: #e6e6e6;
-    border-bottom-color: transparent;
-    border-radius: 10px 10px 0 0;
+}
+
+.game-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.game-footer-restart {
+  height: 20px;
+}
+
+.player-scores {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
