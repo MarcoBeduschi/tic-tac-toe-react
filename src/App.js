@@ -1,9 +1,12 @@
 import React from 'react';
 import Game from './Game.js';
-import './App.css';
-import './Game.css';
-import './Board.css';
-import './Square.css';
+import './reset.css';
+import './button.css'
+import './app.css';
+import './game.css';
+import './board.css';
+import './square.css';
+import './player-score.css';
 
 class App extends React.Component {
   render() {
