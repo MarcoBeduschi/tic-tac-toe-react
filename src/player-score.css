@@ -1,0 +1,19 @@
+.player-score-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 160px;
+  margin: 0 5px;
+  padding: 0 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.16);
+  border-radius: 10px;
+}
+
+.player-score-icon {
+
+}
+
+.player-score-current-score {
+
+}
