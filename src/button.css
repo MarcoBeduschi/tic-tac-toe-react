@@ -1,0 +1,23 @@
+.btn {
+  padding: 10px;
+  /* height: 40px; */
+}
+
+.btn-primary {
+  background-color: #14bdac;
+}
+
+.btn-primary:hover {
+  background-color: #14bdac;
+}
+
+.btn-light {
+  font-weight: bold;
+  background-color: transparent;
+  color: #14bdac;
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background-color: transparent;
+}
