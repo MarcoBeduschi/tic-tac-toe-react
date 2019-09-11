@@ -16,6 +16,7 @@ class Game extends React.Component {
       xIsNext: true,
       gameOver: false,
       winner: null,
+      squares: Array(9).fill(null),
     }
   }
 
@@ -30,9 +31,8 @@ class Game extends React.Component {
           <p><b>{this.state.xIsNext ? 'X' : 'O'}</b> is next.</p>
         </div>
         <Board
-          xIsNext={this.state.xIsNext}
-          onSquaresUpdate={this.onSquaresUpdate}
-          gameOver={this.state.gameOver}
+          squares={this.state.squares}
+          updateBoard={this.updateBoard}
         />
         <div className="game-footer">
           <button
@@ -46,14 +46,29 @@ class Game extends React.Component {
     );
   }
 
-  onSquaresUpdate = (squares) => {
-    const newWinner = calculateWinner(squares);
-    const newGameOver = newWinner ? true : false;
+  updateBoard = (i) => {
+    if (this.state.gameOver || this.state.squares[i]) {
+      return;
+    }
 
     this.setState((prevState) => {
+        let newSquares = [...prevState.squares];
+        newSquares[i] = this.state.xIsNext ? 'X' : 'O';
+
+        return {
+          squares: newSquares,
+          turn: prevState.turn + 1,
+          xIsNext: !prevState.xIsNext,
+        };
+      }, () => { this.onTurnOver() });
+  }
+
+  onTurnOver = () => {
+    const newWinner = calculateWinner(this.state.squares);
+    const newGameOver = newWinner ? true : false;
+
+    this.setState(() => {
       return {
-        turn: prevState.turn + 1,
-        xIsNext: !prevState.xIsNext,
         gameOver: newGameOver,
         winner: newWinner,
       };
