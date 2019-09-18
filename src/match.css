@@ -1,0 +1,16 @@
+.match-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.match-footer-restart {
+  height: 20px;
+}
+
+.player-scores {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}

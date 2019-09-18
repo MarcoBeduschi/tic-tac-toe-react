@@ -10,17 +10,6 @@
     text-align: center;
 }
 
-.game-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-
-.game-footer-restart {
-  height: 20px;
-}
-
 .player-scores {
   display: flex;
   justify-content: center;

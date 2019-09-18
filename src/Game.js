@@ -1,83 +1,46 @@
 import React from 'react';
-import Board from './Board.js';
+import Match from './Match.js'
 import PlayerScore from './PlayerScore.js';
-import { calculateWinner } from './logic/judge.js';
+import { playerVictoryCount } from './logic/judge.js';
 
 class Game extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = this.initialState();
-  }
-
-  initialState() {
-    return {
-      turn: 1,
-      xIsNext: true,
-      gameOver: false,
-      winner: null,
-      squares: Array(9).fill(null),
-    }
-  }
-
-  render() {
-    return (
-      <div className="game">
-        <div className="game-header">
-          <div className="player-scores">
-            <PlayerScore value={'X'}/>
-            <PlayerScore value={'O'}/>
-          </div>
-          <p><b>{this.state.xIsNext ? 'X' : 'O'}</b> is next.</p>
-        </div>
-        <Board
-          squares={this.state.squares}
-          updateBoard={this.updateBoard}
-        />
-        <div className="game-footer">
-          <button
-            className="btn btn-light"
-            type="button"
-            onClick={this.restartGame}>
-            RESTART GAME
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  updateBoard = (i) => {
-    if (this.state.gameOver || this.state.squares[i]) {
-      return;
+    constructor(props) {
+        super(props);
+        this.state = {
+            winnerHistory: []
+        }
     }
 
-    this.setState((prevState) => {
-        let newSquares = [...prevState.squares];
-        newSquares[i] = this.state.xIsNext ? 'X' : 'O';
+    render() {
+        return (
+            <div className="game">
+                <div className="game-header">
+                    <div className="player-scores">
+                        <PlayerScore
+                            player={'X'}
+                            score={playerVictoryCount('X', this.state.winnerHistory)}
+                        />
+                        <PlayerScore
+                            player={'O'}
+                            score={playerVictoryCount('O', this.state.winnerHistory)}
+                        />
+                    </div>
+                    <p><b>{this.state.xIsNext ? 'X' : 'O'}</b> is next.</p>
+                </div>
+                <Match onMatchOver={this.onMatchOver}/>
+            </div>
+        );
+    }
 
-        return {
-          squares: newSquares,
-          turn: prevState.turn + 1,
-          xIsNext: !prevState.xIsNext,
-        };
-      }, () => { this.onTurnOver() });
-  }
+    onMatchOver = (winner) => {
+        this.setState((prevState) => {
+            const newWinnerHistory = [...prevState.winnerHistory, winner]
 
-  onTurnOver = () => {
-    const newWinner = calculateWinner(this.state.squares);
-    const newGameOver = newWinner ? true : false;
-
-    this.setState(() => {
-      return {
-        gameOver: newGameOver,
-        winner: newWinner,
-      };
-    });
-  }
-
-  restartGame = () => {
-    this.setState(() => this.initialState())
-  }
+            return {
+                winnerHistory: newWinnerHistory
+            }
+        })
+    }
 }
 
 export default Game;
