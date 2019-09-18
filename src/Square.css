@@ -18,11 +18,13 @@
 }
 
 .square-content-O {
+    color: rgb(242, 235, 211);
     top: 45%;
     left: 50%;
 }
 
 .square-content-X {
+    color: rgb(84, 84, 84);
     top: 45%;
     left: 57%;
 }
