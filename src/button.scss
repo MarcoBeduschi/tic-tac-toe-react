@@ -1,23 +1,26 @@
+@import 'colors.scss';
+
 .btn {
   padding: 10px;
   /* height: 40px; */
 }
 
 .btn-primary {
-  background-color: #14bdac;
+  background-color: $primary-color;
 }
 
 .btn-primary:hover {
-  background-color: #14bdac;
+  background-color: $primary-color;
 }
 
 .btn-light {
   font-weight: bold;
   background-color: transparent;
-  color: #14bdac;
+  color: $primary-color;
 }
 
 .btn-light:hover,
 .btn-light:focus {
   background-color: transparent;
+  color: $secondary-color;
 }
