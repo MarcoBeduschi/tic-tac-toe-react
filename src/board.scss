@@ -1,7 +1,9 @@
+@import 'colors.scss';
+
 .board-container {
   display: flex;
   justify-content: center;
-  background-color: #14bdac;
+  background-color: $primary-color;
   padding: 10px 0;
 }
 
@@ -14,7 +16,7 @@ table {
 td {
   width: 33.333%;
   border: 6px solid;
-  border-color: #199488;
+  border-color: $secondary-color;
 }
 
 td:first-of-type {

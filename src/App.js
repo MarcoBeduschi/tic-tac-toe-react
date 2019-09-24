@@ -1,13 +1,13 @@
 import React from 'react';
 import Game from './Game.js';
-import './reset.css';
-import './button.css'
-import './app.css';
-import './game.css';
-import './match.css';
-import './board.css';
-import './square.css';
-import './player-score.css';
+import './reset.scss';
+import './button.scss'
+import './app.scss';
+import './game.scss';
+import './match.scss';
+import './board.scss';
+import './square.scss';
+import './player-score.scss';
 
 class App extends React.Component {
     render() {

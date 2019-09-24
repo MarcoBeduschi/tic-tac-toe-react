@@ -1,3 +1,5 @@
+@import 'colors.scss';
+
 .square {
     height: 100%;
     width: 100%;
@@ -11,20 +13,19 @@
 .square-content {
     position: absolute;
     font-size: 46px;
-    color: rgba(0, 0, 0, .25);
     height: 30%;
     width: 50%;
     margin: -23% 0 0 -23%;
 }
 
 .square-content-O {
-    color: rgb(242, 235, 211);
+    color: $accent-color;
     top: 45%;
     left: 50%;
 }
 
 .square-content-X {
-    color: rgb(84, 84, 84);
+    color: $primary-black;
     top: 45%;
     left: 57%;
 }

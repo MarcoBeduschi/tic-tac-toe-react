@@ -1,7 +1,5 @@
 import React from 'react';
 import Match from './Match.js'
-import PlayerScore from './PlayerScore.js';
-import { playerVictoryCount } from './logic/judge.js';
 
 class Game extends React.Component {
     constructor(props) {
@@ -14,20 +12,7 @@ class Game extends React.Component {
     render() {
         return (
             <div className="game">
-                <div className="game-header">
-                    <div className="player-scores">
-                        <PlayerScore
-                            player={'X'}
-                            score={playerVictoryCount('X', this.state.winnerHistory)}
-                        />
-                        <PlayerScore
-                            player={'O'}
-                            score={playerVictoryCount('O', this.state.winnerHistory)}
-                        />
-                    </div>
-                    <p><b>{this.state.xIsNext ? 'X' : 'O'}</b> is next.</p>
-                </div>
-                <Match onMatchOver={this.onMatchOver}/>
+                <Match winnerHistory={this.state.winnerHistory} onMatchOver={this.onMatchOver}/>
             </div>
         );
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Board from './Board.js';
-import { calculateWinner } from './logic/judge.js';
+import PlayerScore from './PlayerScore.js';
+import MatchStatus from './MatchStatus.js';
+import { calculateWinner, playerVictoryCount } from './logic/judge.js';
 
 class Match extends React.Component {
     constructor(props) {
@@ -22,6 +24,22 @@ class Match extends React.Component {
     render() {
         return (
             <div>
+                <div className="match-header">
+                    <div className="player-scores">
+                        <PlayerScore
+                            player={'X'}
+                            score={playerVictoryCount('X', this.props.winnerHistory)}
+                        />
+                        <PlayerScore
+                            player={'O'}
+                            score={playerVictoryCount('O', this.props.winnerHistory)}
+                        />
+                    </div>
+                    <MatchStatus
+                        xIsNext={this.state.xIsNext}
+                        matchOver={this.state.matchOver}
+                    />
+                </div>
                 <Board
                     squares={this.state.squares}
                     updateBoard={this.updateBoard}
