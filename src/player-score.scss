@@ -12,6 +12,10 @@
   border-radius: 10px;
 }
 
+.player-score-card-active {
+  border-bottom: 3px solid $primary-color;
+}
+
 .player-score-icon {
   color: $primary-black;
 }

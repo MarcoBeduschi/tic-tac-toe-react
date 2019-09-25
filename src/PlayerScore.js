@@ -4,6 +4,7 @@ import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function PlayerScore(props) {
     let icon
+    const showActiveClassName = props.active ? 'player-score-card-active' : ''
 
     if (props.player === 'X') {
         icon = <FontAwesomeIcon icon={faTimes} />;
@@ -12,7 +13,7 @@ function PlayerScore(props) {
     }
 
     return(
-        <div className="player-score-card">
+        <div className={`player-score-card ${showActiveClassName}`}>
             <div className="player-score-icon">{icon}</div>
             <div className="player-score-current-score">
                 {props.score ? props.score : "-"}
