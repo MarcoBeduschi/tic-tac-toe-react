@@ -2,7 +2,8 @@ import React from 'react';
 import Board from './Board.js';
 import PlayerScore from './PlayerScore.js';
 import MatchStatus from './MatchStatus.js';
-import { calculateWinner, playerVictoryCount } from './logic/judge.js';
+import MatchOverModal from './MatchOverModal.js';
+import { calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge.js';
 
 class Match extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class Match extends React.Component {
             turn: 1,
             xIsNext: true,
             matchOver: false,
+            showModal: false,
             winner: null,
             squares: Array(9).fill(null)
         }
@@ -29,10 +31,12 @@ class Match extends React.Component {
                         <PlayerScore
                             player={'X'}
                             score={playerVictoryCount('X', this.props.winnerHistory)}
+                            active={currentPlayer(this.state.xIsNext) === 'X'}
                         />
                         <PlayerScore
                             player={'O'}
                             score={playerVictoryCount('O', this.props.winnerHistory)}
+                            active={currentPlayer(this.state.xIsNext) === 'O'}
                         />
                     </div>
                     <MatchStatus
@@ -52,6 +56,12 @@ class Match extends React.Component {
                         RESTART MATCH
                     </button>
                 </div>
+                <MatchOverModal
+                    show={this.state.showModal}
+                    handleClose={this.hideModal}
+                >
+                    <p>This is a modal!</p>
+                </MatchOverModal>
             </div>
         );
     }
@@ -72,6 +82,7 @@ class Match extends React.Component {
                 turn: prevState.turn + 1,
                 xIsNext: !prevState.xIsNext,
                 matchOver: newMatchOver,
+                showModal: newMatchOver,
                 winner: newWinner,
             };
         }, this.onTurnEnded);
@@ -81,6 +92,10 @@ class Match extends React.Component {
         if (this.state.matchOver) {
             this.props.onMatchOver(this.state.winner);
         }
+    }
+
+    hideModal = () => {
+        this.setState({ showModal: false })
     }
 
     restartMatch = () => {

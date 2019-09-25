@@ -21,3 +21,7 @@ export function calculateWinner(squares) {
 export function playerVictoryCount(player, winnerHistory) {
     return winnerHistory.filter(winner => winner === player).length;
 }
+
+export function currentPlayer(xIsNext) {
+    return xIsNext ? 'X' : 'O';
+}

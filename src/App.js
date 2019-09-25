@@ -8,6 +8,7 @@ import './match.scss';
 import './board.scss';
 import './square.scss';
 import './player-score.scss';
+import './match-over-modal.scss';
 
 class App extends React.Component {
     render() {
