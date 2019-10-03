@@ -1,0 +1,24 @@
+@import 'colors.scss';
+
+.match-over {
+    display: flex;
+    justify-content: center;
+
+    &_winner-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &_icon {
+            font-size: 100px;
+            color: $primary-black;
+        }
+
+        .message {    
+            font-size: 48px;
+            font-weight: 700;
+            color: $primary-black;
+        }
+    }
+}
