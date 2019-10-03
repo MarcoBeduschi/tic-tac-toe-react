@@ -5,10 +5,11 @@ import './button.scss'
 import './app.scss';
 import './game.scss';
 import './match.scss';
+import './match-body.scss';
+import './match-over.scss';
 import './board.scss';
 import './square.scss';
 import './player-score.scss';
-import './match-over-modal.scss';
 
 class App extends React.Component {
     render() {
