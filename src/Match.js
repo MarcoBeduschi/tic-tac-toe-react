@@ -3,6 +3,7 @@ import MatchBody from './MatchBody.js';
 import PlayerScore from './PlayerScore.js';
 import MatchStatus from './MatchStatus.js';
 import { calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge.js';
+import PropTypes from 'prop-types';
 
 class Match extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class Match extends React.Component {
             turn: 1,
             xIsNext: true,
             matchOver: false,
-            showModal: false,
             winner: null,
             squares: Array(9).fill(null)
         }
@@ -77,7 +77,6 @@ class Match extends React.Component {
                 turn: prevState.turn + 1,
                 xIsNext: !prevState.xIsNext,
                 matchOver: newMatchOver,
-                showModal: newMatchOver,
                 winner: newWinner,
             };
         }, this.onTurnEnded);
@@ -89,13 +88,14 @@ class Match extends React.Component {
         }
     }
 
-    hideModal = () => {
-        this.setState({ showModal: false })
-    }
-
     restartMatch = () => {
         this.setState(() => this.initialState())
     }
+}
+
+Match.propTypes = {
+    winnerHistory: PropTypes.array.isRequired,
+    onMatchOver: PropTypes.func.isRequired,
 }
 
 export default Match;

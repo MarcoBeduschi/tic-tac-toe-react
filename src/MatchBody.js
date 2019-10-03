@@ -1,8 +1,9 @@
 import React from 'react';
 import Board from './Board.js';
 import MatchOver from './MatchOver.js';
+import PropTypes from 'prop-types';
 
-function MatchBody(props) {
+const MatchBody = props => {
     return(
         <div className="match-body-container">
             {
@@ -17,6 +18,13 @@ function MatchBody(props) {
             }
         </div>
     )
+}
+
+MatchBody.propTypes = {
+    gameOver: PropTypes.bool.isRequired,
+    winner: PropTypes.string.isRequired,
+    squares: PropTypes.array.isRequired,
+    onBoardUpdated: PropTypes.func.isRequired,
 }
 
 export default MatchBody;

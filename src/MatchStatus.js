@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function MatchStatus(props) {
+const MatchStatus = props => {
     let statusMessage
 
     if(props.matchOver) {
@@ -10,6 +11,11 @@ function MatchStatus(props) {
     }
 
     return <p>{statusMessage}</p>
+}
+
+MatchStatus.propTypes = {
+    matchOver: PropTypes.bool.isRequired,
+    xIsNext: PropTypes.bool.isRequired
 }
 
 export default MatchStatus;
