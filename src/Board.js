@@ -39,7 +39,7 @@ class Board extends React.Component {
           <Square
               id={i}
               value={this.props.squares[i]}
-              onClick={() => this.props.updateBoard(i)}
+              onClick={() => this.props.onBoardUpdated(i)}
           />
       )
   }
