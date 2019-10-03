@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
-function Square(props) {
+const Square = props => {
     let icon
 
     if (props.value === 'X') {

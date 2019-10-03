@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
-function MatchOver(props) {
+const MatchOver = props => {
     let icon
 
     if (props.winner === 'X') {

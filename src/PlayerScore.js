@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
-function PlayerScore(props) {
-    let icon
+const PlayerScore = props => {
     const showActiveClassName = props.active ? 'player-score-card-active' : ''
+    let icon
 
     if (props.player === 'X') {
         icon = <FontAwesomeIcon icon={faTimes} />;

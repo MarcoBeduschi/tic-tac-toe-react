@@ -16,7 +16,6 @@ class Match extends React.Component {
             turn: 1,
             xIsNext: true,
             matchOver: false,
-            showModal: false,
             winner: null,
             squares: Array(9).fill(null)
         }
@@ -77,7 +76,6 @@ class Match extends React.Component {
                 turn: prevState.turn + 1,
                 xIsNext: !prevState.xIsNext,
                 matchOver: newMatchOver,
-                showModal: newMatchOver,
                 winner: newWinner,
             };
         }, this.onTurnEnded);
@@ -87,10 +85,6 @@ class Match extends React.Component {
         if (this.state.matchOver) {
             this.props.onMatchOver(this.state.winner);
         }
-    }
-
-    hideModal = () => {
-        this.setState({ showModal: false })
     }
 
     restartMatch = () => {

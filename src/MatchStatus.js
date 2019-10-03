@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MatchStatus(props) {
+const MatchStatus = props => {
     let statusMessage
 
     if(props.matchOver) {

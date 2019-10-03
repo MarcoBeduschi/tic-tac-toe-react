@@ -2,7 +2,7 @@ import React from 'react';
 import Board from './Board.js';
 import MatchOver from './MatchOver.js';
 
-function MatchBody(props) {
+const MatchBody = props => {
     return(
         <div className="match-body-container">
             {
