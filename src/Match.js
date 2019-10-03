@@ -1,8 +1,7 @@
 import React from 'react';
-import Board from './Board.js';
+import MatchBody from './MatchBody.js';
 import PlayerScore from './PlayerScore.js';
 import MatchStatus from './MatchStatus.js';
-import MatchOverModal from './MatchOverModal.js';
 import { calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge.js';
 
 class Match extends React.Component {
@@ -44,9 +43,11 @@ class Match extends React.Component {
                         matchOver={this.state.matchOver}
                     />
                 </div>
-                <Board
+                <MatchBody
+                    winner={this.state.winner}
+                    gameOver={this.state.matchOver}
                     squares={this.state.squares}
-                    updateBoard={this.updateBoard}
+                    onBoardUpdated={this.onBoardUpdated}
                 />
                 <div className="match-footer">
                     <button
@@ -56,17 +57,11 @@ class Match extends React.Component {
                         RESTART MATCH
                     </button>
                 </div>
-                <MatchOverModal
-                    show={this.state.showModal}
-                    handleClose={this.hideModal}
-                >
-                    <p>This is a modal!</p>
-                </MatchOverModal>
             </div>
         );
     }
 
-    updateBoard = (i) => {
+    onBoardUpdated = (i) => {
         if (this.state.matchOver || this.state.squares[i]) {
             return;
         }
