@@ -18,9 +18,9 @@ function MatchOver(props) {
 
     return(
         <div className="match-over">
-            <div className="match_winner-container">
-                <div className="winner-container_icon">{icon}</div>
-                <div className="message">WINNER!</div> 
+            <div className="match-over_winner-container">
+                <div className="match-over_winner-container_icon">{icon}</div>
+                <div className="match-over_winner-container_message">WINNER!</div> 
             </div>
         </div> 
     )
