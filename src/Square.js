@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types';
 
 const Square = props => {
     let icon
@@ -16,6 +17,11 @@ const Square = props => {
             <span className={`square-content square-content-${props.value}`}>{icon}</span>
         </div>
     )
+}
+
+Square.propTypes = {
+    value: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
 }
 
 export default Square;

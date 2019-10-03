@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from './Square.js';
+import PropTypes from 'prop-types';
 
 const Board = props => {
     const renderSquare = (i) => {
@@ -33,6 +34,11 @@ const Board = props => {
             </table>
         </div>
     )
+}
+
+Board.propTypes = {
+    squares: PropTypes.array.isRequired,
+    onBoardUpdated: PropTypes.func.isRequired
 }
 
 export default Board;

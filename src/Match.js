@@ -3,6 +3,7 @@ import MatchBody from './MatchBody.js';
 import PlayerScore from './PlayerScore.js';
 import MatchStatus from './MatchStatus.js';
 import { calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge.js';
+import PropTypes from 'prop-types';
 
 class Match extends React.Component {
     constructor(props) {
@@ -90,6 +91,11 @@ class Match extends React.Component {
     restartMatch = () => {
         this.setState(() => this.initialState())
     }
+}
+
+Match.propTypes = {
+    winnerHistory: PropTypes.array.isRequired,
+    onMatchOver: PropTypes.func.isRequired,
 }
 
 export default Match;
