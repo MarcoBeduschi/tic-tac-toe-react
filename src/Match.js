@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const Match = props => {
     const INITIAL_STATE = {
         turn: 0,
-        xIsNext: true,
+        xIsNext: false,
         matchOver: false,
         winner: null,
         squares: Array(9).fill(null)
@@ -46,7 +46,11 @@ const Match = props => {
     }
 
     const restartMatch = () => {
-        this.setState(() => this.initialState())
+        setTurn(INITIAL_STATE['turn']); 
+        setxIsNext(INITIAL_STATE['xIsNext']); 
+        setMatchOver(INITIAL_STATE['matchOver']); 
+        setWinner(INITIAL_STATE['winner']); 
+        setSquares(INITIAL_STATE['squares']); 
     }
 
     return (
