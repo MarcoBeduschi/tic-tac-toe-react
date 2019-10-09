@@ -16,21 +16,23 @@ const Board = props => {
     return(
         <div className="board-container">
             <table>
-                <tr>
-                    <td>{renderSquare(0)}</td>
-                    <td>{renderSquare(1)}</td>
-                    <td>{renderSquare(2)}</td>
-                </tr>
-                <tr>
-                    <td>{renderSquare(3)}</td>
-                    <td>{renderSquare(4)}</td>
-                    <td>{renderSquare(5)}</td>
-                </tr>
-                <tr>
-                    <td>{renderSquare(6)}</td>
-                    <td>{renderSquare(7)}</td>
-                    <td>{renderSquare(8)}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>{renderSquare(0)}</td>
+                        <td>{renderSquare(1)}</td>
+                        <td>{renderSquare(2)}</td>
+                    </tr>
+                    <tr>
+                        <td>{renderSquare(3)}</td>
+                        <td>{renderSquare(4)}</td>
+                        <td>{renderSquare(5)}</td>
+                    </tr>
+                    <tr>
+                        <td>{renderSquare(6)}</td>
+                        <td>{renderSquare(7)}</td>
+                        <td>{renderSquare(8)}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     )

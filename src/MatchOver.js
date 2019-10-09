@@ -4,6 +4,7 @@ import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const MatchOver = props => {
     let icon
+    let message = 'WINNER!'
 
     if (props.winner === 'X') {
         icon = <FontAwesomeIcon icon={faTimes} />;
@@ -14,13 +15,14 @@ const MatchOver = props => {
             <FontAwesomeIcon icon={faTimes} /> 
             <FontAwesomeIcon icon={faCircle} /> 
         </Fragment>
+        message = 'DRAW!'
     }
 
     return(
         <div className="match-over">
             <div className="match-over_winner-container">
                 <div className="match-over_winner-container_icon">{icon}</div>
-                <div className="match-over_winner-container_message">WINNER!</div> 
+                <div className="match-over_winner-container_message">{message}</div> 
             </div>
         </div> 
     )

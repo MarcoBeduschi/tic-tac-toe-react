@@ -1,3 +1,7 @@
+export function isBoardFull(squares) {
+    return !squares.includes(null);
+}
+
 export function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],

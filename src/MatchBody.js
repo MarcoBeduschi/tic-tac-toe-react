@@ -22,7 +22,7 @@ const MatchBody = props => {
 
 MatchBody.propTypes = {
     gameOver: PropTypes.bool.isRequired,
-    winner: PropTypes.string.isRequired,
+    winner: PropTypes.string,
     squares: PropTypes.array.isRequired,
     onBoardUpdated: PropTypes.func.isRequired,
 }
