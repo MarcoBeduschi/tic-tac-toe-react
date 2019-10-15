@@ -13,7 +13,7 @@
 }
 
 .player-score-card-active {
-  border-bottom: 3px solid $primary-color;
+  animation: popUp 0.25s ease-in-out forwards;
 }
 
 .player-score-icon {
@@ -22,4 +22,16 @@
 
 .player-score-current-score {
   color: $primary-black;
+}
+
+@keyframes popUp {
+  0% {
+    box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    border-bottom: 1px solid $primary-color;
+  }
+
+  100% {
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.16);
+    border-bottom: 3px solid $primary-color;
+  }
 }
