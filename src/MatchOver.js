@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types';
 
 const MatchOver = props => {
     let icon
@@ -26,6 +27,10 @@ const MatchOver = props => {
             </div>
         </div> 
     )
+}
+
+MatchOver.propTypes = {
+    winner: PropTypes.string
 }
 
 export default MatchOver;
