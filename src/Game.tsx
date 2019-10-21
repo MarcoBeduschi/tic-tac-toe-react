@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Match from './Match.js'
+import { PLAYER } from './logic/judge';
 
-const Game = () => {
-    const [winnerHistory, setWinnerHistory] = useState([]);
+interface GameProps {}
+
+const Game: React.FC<GameProps> = () => {
+    const [winnerHistory, setWinnerHistory] = useState<PLAYER[]>([]);
     
-    const onMatchOver = (winner) => {
+    const onMatchOver = (winner: PLAYER) => {
         setWinnerHistory((prevWinnerHistory) => [...prevWinnerHistory, winner]);
     }
 

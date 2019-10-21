@@ -1,5 +1,5 @@
 import React from 'react';
-import Game from './Game.js';
+import Game from './Game';
 import './reset.scss';
 import './button.scss'
 import './app.scss';
@@ -11,7 +11,10 @@ import './board.scss';
 import './square.scss';
 import './player-score.scss';
 
-class App extends React.Component {
+interface AppProps {}
+interface AppState {}
+
+class App extends React.Component<AppProps, AppState> {
     render() {
         return(
             <div className="app">

@@ -1,8 +1,15 @@
-export function isBoardFull(squares) {
+export enum PLAYER {
+    X = 'X',
+    O = 'O'
+}
+
+export type SQUARE = PLAYER | null;
+
+export function isBoardFull(squares: SQUARE[]) {
     return !squares.includes(null);
 }
 
-export function calculateWinner(squares) {
+export function calculateWinner(squares: SQUARE[]) {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
@@ -22,10 +29,10 @@ export function calculateWinner(squares) {
     return null;
 }
 
-export function playerVictoryCount(player, winnerHistory) {
+export function playerVictoryCount(player: PLAYER, winnerHistory: PLAYER[]) {
     return winnerHistory.filter(winner => winner === player).length;
 }
 
-export function currentPlayer(xIsNext) {
-    return xIsNext ? 'X' : 'O';
+export function currentPlayer(xIsNext: boolean) {
+    return xIsNext ? PLAYER.X : PLAYER.O;
 }

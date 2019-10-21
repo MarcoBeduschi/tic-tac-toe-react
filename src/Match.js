@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MatchBody from './MatchBody.js';
 import PlayerScore from './PlayerScore.js';
 import MatchStatus from './MatchStatus.js';
-import { isBoardFull, calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge.js';
+import { isBoardFull, calculateWinner, playerVictoryCount, currentPlayer } from './logic/judge';
 import PropTypes from 'prop-types';
 
 const Match = props => {
