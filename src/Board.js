@@ -2,6 +2,9 @@ import React from 'react';
 import Square from './Square.js';
 import PropTypes from 'prop-types';
 
+
+
+
 const Board = props => {
     const renderSquare = (i) => {
         return(
