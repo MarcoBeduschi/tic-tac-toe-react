@@ -1,5 +1,5 @@
 import React from 'react';
-import Square from './Square.js';
+import Square from './Square';
 import PropTypes from 'prop-types';
 
 const Board = props => {
